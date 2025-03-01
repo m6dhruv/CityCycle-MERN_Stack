@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 function Nav() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -36,22 +37,24 @@ function Nav() {
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex items-center space-x-8">
-                            {['Find a Bike', 'Stations', 'Pricing', 'Contact'].map((item) => (
-                                <a
+                            {['Home', 'Find a Bike', 'Stations', 'Pricing', 'Contact'].map((item) => (
+                                <Link
                                     key={item}
-                                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+                                    to={item === 'Home' ? '/' : item === 'Stations' ? '/station' : `/${item.toLowerCase().replace(' ', '-')}`}
                                     className={`font-medium text-lg relative group ${
                                         isScrolled ? 'text-slate-900' : 'text-white'
                                     }`}
                                 >
                                     {item}
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
-                                </a>
+                                </Link>
                             ))}
-                            <button className="font-medium text-lg rounded-3xl p-2 px-6 text-white bg-slate-800 hover:bg-slate-900 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer">
-                                <i className="fa-solid fa-user-tie"></i>
-                                <span>Account</span>
-                            </button>
+                            <NavLink to="/sain">
+                                <button className="font-medium text-lg rounded-3xl p-2 px-6 text-white bg-slate-800 hover:bg-slate-900 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer">
+                                    <i className="fa-solid fa-user-tie"></i>
+                                    <span>Sign In</span>
+                                </button>
+                            </NavLink>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -81,10 +84,10 @@ function Nav() {
                         <div className={`px-2 pt-2 pb-3 space-y-1 ${
                             isScrolled ? 'bg-white' : 'bg-slate-800/90'
                         }`}>
-                            {['Find a Bike', 'Stations', 'Pricing', 'Contact'].map((item) => (
-                                <a
+                            {['Home', 'Find a Bike', 'Stations', 'Pricing', 'Contact'].map((item) => (
+                                <Link
                                     key={item}
-                                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+                                    to={item === 'Home' ? '/' : item === 'Stations' ? '/stations' : `/${item.toLowerCase().replace(' ', '-')}`}
                                     className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
                                         isScrolled 
                                             ? 'text-slate-900 hover:bg-slate-100' 
@@ -92,7 +95,7 @@ function Nav() {
                                     }`}
                                 >
                                     {item}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

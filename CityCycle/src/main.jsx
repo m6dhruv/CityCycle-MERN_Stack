@@ -1,27 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
+// import Station from './Station';
+import App from './App';
+
 // import reportWebVitals from './reportWebVitals';
-import Nav from './Nav'
-import Hero from './Hero';
-import Cart from './Cart'
-import Slider from './Slider'
-import Price from './Price'
-import Footer from './Footer'
+// import Nav from './Nav'
+// import Hero from './Hero';
+// import Cart from './Cart'
+// import Slider from './Slider'
+// import Price from './Price'
+// import Footer from './Footer'
+// import Sain from './Sain';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Nav/>
+    <App />
+    {/* <Station/> */}
+  
+
+    {/* <Nav/>
     <Hero/>
     <Cart/>
     <Slider/>
     <Price/>
-    <Footer/>
+    <Footer/>*/}
+    {/* <Sain/>  */}
   </React.StrictMode>
 );
 
