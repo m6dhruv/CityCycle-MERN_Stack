@@ -20,8 +20,6 @@ root.render(
   <React.StrictMode>
     <App />
     {/* <Station/> */}
-  
-
     {/* <Nav/>
     <Hero/>
     <Cart/>

@@ -15,6 +15,7 @@ export default {
       },
       animation: {
         scroll: 'scroll 2s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.5s ease-out'
       }
     },
   },
